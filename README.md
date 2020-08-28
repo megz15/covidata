@@ -1,7 +1,7 @@
 # Covidata
 A simple Covid-19 tracker made in Python
 # About project
-Made for a school project. Data collected from https://github.com/CSSEGISandData/COVID-19. Shows data on different countries/provinces, including:
+Made for a school project. Data collected from https://github.com/CSSEGISandData/COVID-19. Shows data for different countries/provinces, including:
   - Confirmed cases
   - Deaths
   - Recovered cases
