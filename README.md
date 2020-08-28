@@ -18,6 +18,6 @@ Made for a school project. Data collected from https://github.com/CSSEGISandData
 
 \
 \
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<br>
 Made with :heart: by Meghraj Goswami<br>
 For Terms of Service visit https://bit.ly/3aeIVfl
