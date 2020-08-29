@@ -16,12 +16,12 @@ Added: Option to form graph
 1. Open *'covid.py'*
 2. Select option to:
    - Make graph:
-    - Enter name of the country
-    - View formed graph
+     - Enter name of the country
+     - View formed graph
    - Show detailed info at particular date:
-    - Enter the date in (mm-dd-yyyy) format, or leave the field empty to use latest data available
-    - Enter name of the country
-    - View the collected data
+     - Enter the date in (mm-dd-yyyy) format, or leave the field empty to use latest data available
+     - Enter name of the country
+     - View the collected data
    - Get to know more about COVID-19
 
 \
