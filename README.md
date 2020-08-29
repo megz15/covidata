@@ -7,7 +7,7 @@ Made for a school project. Data collected from https://github.com/CSSEGISandData
   - Recovered cases
   - Active cases
   - Case-Fatality Ratio
-Added: Option to form graph
+<br>Added: Option to form graph
 ## REQUIREMENTS:
 1. [Python 3](https://www.python.org/downloads/): I use 3.8.2
 2. [Pandas](https://pandas.pydata.org/docs/getting_started/install.html): Fast, powerful, flexible and easy to use open source data analysis and manipulation library for Python. Install it using ```pip install pandas``` in Command Prompt.
