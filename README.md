@@ -7,6 +7,7 @@ Made for a school project. Data collected from https://github.com/CSSEGISandData
   - Recovered cases
   - Active cases
   - Case-Fatality Ratio
+
 <br>Added: Option to form graph
 ## REQUIREMENTS:
 1. [Python 3](https://www.python.org/downloads/): I use 3.8.2
