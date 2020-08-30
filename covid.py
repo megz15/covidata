@@ -16,13 +16,12 @@ import warnings
 warnings.filterwarnings("ignore",category=UserWarning)
 plt.style.use('bmh')
 
-print('*** Covidata - A simple Covid-19 tracker ***')
-print('Data collected from GitHub repo of JHU CSSE')
+print('\033[7m\033[1;32m*** \033[3mCovidata - A simple Covid-19 tracker ***')
+print('\n\033[7m\033[1;31mData collected from GitHub repo of \033[4mJHU CSSE')
 #wb('https://github.com/CSSEGISandData/COVID-19')
-print('Tip:  Leave date field empty to get latest info!\nNote: Timestamps are in UTC format (GMT+0)')
-
+print('\n\033[0m\033[7m\033[1;36mTip:  Leave date field empty to get latest info!\nNote: Timestamps are in UTC format (GMT+0)\n\033[0m')
 while True:
-    choice=int(input('\nChoose->\n1. Create graph\n2. Show latest data/data at particular date\n3. Get info on Covid-19\n4. Exit\nYour choice: '))
+    choice=int(input('\033[1;33m\nChoose->\n1. Create graph\n2. Show latest data/data at particular date\n3. Get info on Covid-19\n4. Exit\nYour choice: '))
     if choice==1:
         p_s,c_r,datelist,graf_indx = [],[],[],[]
         conf,deth,recv = [],[],[]
@@ -32,7 +31,7 @@ while True:
         del csv_conf['Lat'],csv_conf['Long'],csv_deth['Lat'],csv_deth['Long'],csv_recv['Lat'],csv_recv['Long']
         p_s = csv_conf['Province/State']
         c_r = csv_conf['Country/Region']
-        country_name = input('\nEnter country: ')
+        country_name = input('\033[0m\033[1m\nEnter country: ')
         if country_name.lower()=='us' or country_name.lower()=='usa' or country_name.lower()=='united states of america':
             country_name = 'US'
         else:
@@ -65,9 +64,9 @@ while True:
                 plt.figure('Covidata for '+country_name)
             else:
                 plt.figure('Covidata for '+p_s[i]+' in '+country_name)
-            plt.plot(datelist,conf,label='Confirmed',color='#2196F3')
-            plt.plot(datelist,deth,label='Deaths',color='#FF5252')
             plt.plot(datelist,recv,label='Recovered',color='#8BC34A')
+            plt.plot(datelist,deth,label='Deaths',color='#FF5252')
+            plt.plot(datelist,conf,label='Confirmed',color='#2196F3')
             plt.axes().xaxis.set_major_locator(tick.MultipleLocator(7))
             plt.axes().xaxis.set_minor_locator(tick.MultipleLocator(1))
             plt.xticks(rotation=45)
@@ -80,7 +79,7 @@ while True:
         plt.show()
     elif choice==2:
         while True:
-            chk_date = input('\nEnter date (mm-dd-yyyy): ')
+            chk_date = input('\033[0m\033[1m\nEnter date (mm-dd-yyyy): ')
             if chk_date=='':
                 dynURL = (date.today()-timedelta(days=1)).strftime('%m-%d-%Y')+'.csv'
                 dayBeforeURL = (date.today()-timedelta(days=2)).strftime('%m-%d-%Y')+'.csv'
@@ -120,14 +119,14 @@ while True:
                 if cr_list[i]==c_input:
                     indx.append(i)
 
-            print('\n===================================')
-            print('Covid-19 statistics for '+c_input.title())
+            print('\033[1;30m\n===================================')
+            print('\033[1;32mCovid-19 statistics for '+c_input.title())
             print('Last updated at',lu_list[indx[0]])
-            print('===================================\n')
+            print('\033[1;30m===================================\n')
 
             for j in indx:
                 if c_input.lower()=='us':
-                    print('\t'+str(us_list[j])+', '+str(ps_list[j])+'\n')
+                    print('\033[1;33m\t'+str(us_list[j])+', '+str(ps_list[j])+'\n')
                 else:
                     if str(ps_list[j])=='Unknown':
                         continue
@@ -135,26 +134,26 @@ while True:
                         print()
                         pass
                     else:
-                        print('\t'+ps_list[j]+'\n')
-                print('Confirmed cases:\t',cf_list[j])
+                        print('\033[1;33m\t'+ps_list[j]+'\n')
+                print('\033[0m\033[1mConfirmed cases:\t',cf_list[j])
                 print('Deaths:\t\t\t',dt_list[j])
                 print('Recovered:\t\t',rc_list[j])
                 print('Active cases:\t\t',ac_list[j])
                 print('Case-Fatality Ratio:\t',round(cfr_list[j],2))
-                print('\n===================================\n')
-            if input('Continue? (y/n): ').lower()=='y':
+                print('\033[1;30m\n===================================\n')
+            if input('\033[1;33mContinue? (\033[1;32my\033[0m\033[1;33m/\033[1;31mn\033[0m\033[1;33m): ').lower()=='y':
                 continue
             else:
                 break
     elif choice==3:
-        print('\nOpening web browser...\nOpening mohfw.gov.in')
+        print('\033[0m\033[1m\nOpening web browser...\nOpening \033[1;32mmohfw.gov.in')
         wb('https://www.mohfw.gov.in')
     elif choice==4:
-        print('\nExiting',end='')
+        print('\033[1;32m\nThanks for using my program!\n\033[1;31mExiting',end='')
         for i in '...':
             sleep(0.5)
             print(i,end='')
         sleep(0.5)
         break
     else:
-        print('Bad choice number, try again')
+        print('\033[1;31m\nBad choice number, try again')
